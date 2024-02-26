@@ -1,0 +1,12 @@
+# Define the folder and file path
+$folderPath = "C:\Temp"
+$filePath = "C:\Temp\MyFile.txt"
+
+# Check if the folder exists
+if (-not (Test-Path -Path $folderPath)) {
+    # Folder does not exist, so create it
+    New-Item -ItemType Directory -Path $folderPath
+}
+
+# Create a new text file in the specified folder
+"Your text content goes here" | Out-File -FilePath $filePath
